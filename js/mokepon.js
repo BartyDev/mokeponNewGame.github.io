@@ -240,12 +240,21 @@ function enemyPetAttack() {
 function combat() {
 
     if (playerAttack == enemyPlayerAttack) {
-        createMessage("🫱 EMPATE 🫲")
+        setTimeout(() => {
+            createMessage("💩 EMPATE 💩")
+            mokeponLolSound()
+        }, 1000);
     } else if (playerAttack == "FIREBALL 🔥" && (enemyPlayerAttack == "WIND BLADES 🌪️" || enemyPlayerAttack == "GRAVEL STORM 🪨") || playerAttack == "WATER JET 🌊" && (enemyPlayerAttack == "FIREBALL 🔥" || enemyPlayerAttack == "THUNDER IMPACT ⚡") || playerAttack == "GRAVEL STORM 🪨" && (enemyPlayerAttack == "THUNDER IMPACT ⚡" || enemyPlayerAttack == "WATER JET 🌊") || playerAttack == "THUNDER IMPACT ⚡" && (enemyPlayerAttack == "FIREBALL 🔥" || enemyPlayerAttack == "WIND BLADES 🌪️") || playerAttack == "WIND BLADES 🌪️" && (enemyPlayerAttack == "GRAVEL STORM 🪨" || enemyPlayerAttack == "WATER JET 🌊")) {
-        createMessage("🥇 YOU WIN 🥇")
+        setTimeout(() => {
+            mokeponWinSound()
+            createMessage("🥇 YOU WIN 🥇")
+        }, 1200);
         lifeEnemy--
     } else {
-        createMessage("🐤 YOU LOSE 🐤")
+        setTimeout(() => {
+            mokeponLoseSound()
+            createMessage("👊 YOU LOSE 👊")
+        }, 1200);
         lifePlayer--
     }
     reviewLives();
@@ -291,8 +300,11 @@ function winnerLoser(resultTwo) {
 function reviewLives() {
     let spanLIfePlayer = document.getElementById("life-player")
     let spanLIfeEnemy = document.getElementById("life-enemy")
-    let toggleWinLose2 = document.getElementById("mokepon-change-img2")
-    let toggleWinLose = document.getElementById("mokepon-change-img")
+    let toggleWinLosePlayer = document.getElementById("mokepon-change-img")
+    let toggleWinLoseEnemy = document.getElementById("mokepon-change-img2")
+    let toogleDead1 = document.getElementById("img-dead1")
+    let toogleDead2 = document.getElementById("img-dead2")
+
 
     if (lifeEnemy == 2) {
         spanLIfeEnemy.innerHTML = "❤️❤️🖤"
@@ -301,11 +313,12 @@ function reviewLives() {
     } else if (lifeEnemy == 0) {
         audioWorld2.pause();
         spanLIfeEnemy.innerHTML = "🖤🖤🖤 ☠️"
+        toggleWinLoseEnemy.style.display = "none"
         setTimeout(() => {
-            toggleWinLose2.style.display = "none"
+            toogleDead2.style.display = "block"
             youWin.play();
             winnerLoser("YOU ARE A WINNER 👑")
-        }, 1500);
+        }, 1300);
     }
 
     if (lifePlayer == 2) {
@@ -315,11 +328,12 @@ function reviewLives() {
     } else if (lifePlayer == 0) {
         audioWorld2.pause();
         spanLIfePlayer.innerHTML = "🖤🖤🖤 ☠️"
+        toggleWinLosePlayer.style.display = "none"
         setTimeout(() => {
-            toggleWinLose.style.display = "none"
+            toogleDead1.style.display = "block"
             youLose.play();
             winnerLoser("GAME OVER 💀")
-        }, 1500);
+        }, 1300);
     }
 }
 
@@ -335,8 +349,16 @@ function selectMokeponSound() {
     selectMokpeon.play()
 }
 
-function selectMokeponlol() {
-    flameon.play();
+function mokeponLolSound() {
+   lolF.play();
+}
+
+function mokeponWinSound(){
+    yesWinner.play()
+}
+
+function mokeponLoseSound(){
+    yesLoser.play()
 }
 
 let playerAttack;
@@ -360,9 +382,9 @@ let minorMok = new Audio("./assets/audio/minor.mp3")
 let rinhordonMok = new Audio("./assets/audio/rihordon.mp3")
 let kaimanderMok = new Audio("./assets/audio/kaimanderl.mp3")
 let loadPage = new Audio("assets/audio/comenzamos.mp3")
-/* let yesWinner = new Audio("assets/audio/yeswin.mp3") */
-/* let yesLoser = new Audio("assets/audio/golpeperdiste.mp3") */
-/* let empateF = new Audio("assets/audio/empate.mp3") */
+let yesWinner = new Audio("assets/audio/yeswin.mp3")
+let yesLoser = new Audio("assets/audio/golpeperdiste.mp3")
+let lolF = new Audio("assets/audio/empate.mp3")
 /* let errorMok = new Audio("asstes/audio/escogesmokepon.mp3") */
 /* let cursorEffects = new Audio("./assets/audio/sonidocursor.mp3") */
 

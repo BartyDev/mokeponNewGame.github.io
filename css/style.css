@@ -25,11 +25,15 @@
     background-size: cover;
     background-position: right;
     background-attachment: fixed;
-    font-size: 10px;
+    font-size: 15px;
+    font-weight: bold;
+    font-family: "pokeArmy";
     color: #fff;
     width: 100%;
     height: 100vh;
     display: flex;
+    flex-direction: column;
+    gap: 10px;
     justify-content: center;
     align-items: center;
     z-index: 99999;
@@ -47,7 +51,7 @@
 /* ===== CSS PAGE ====== */
 
 body {
-    background: linear-gradient(rgba(5, 7, 12, 0.3), rgba(5, 7, 12, 0.0)), url(../assets/imgs/fondobatallapokemon.png);
+    background: linear-gradient(rgba(5, 7, 12, 0.35), rgba(5, 7, 12, 0.15)), url(../assets/imgs/fondobatallapokemon.png);
     background-color: #002B5B;
     background-position: center;
     background-size: cover;
@@ -98,18 +102,18 @@ body {
     box-sizing: border-box;
     border-radius: 20px;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     margin-right: 150px;
     margin-left: 150px;
-    background: linear-gradient(rgba(5, 7, 12, 0.75), rgba(5, 7, 12, 0.0));
+    background: linear-gradient(rgba(6, 11, 48, 0.75), rgba(5, 7, 12, 0.40));
     background-position: center;
     color: #ffffffef;
     cursor: pointer;
 }
 
 .card-of-mokepon:hover {
-    background: linear-gradient(rgba(5, 7, 12, 0.65), rgba(5, 7, 12, 0.35));
+    background: linear-gradient(rgba(6, 11, 48, 0.95), rgba(5, 7, 12, 0.75));
     background-position: center;
 }
 
@@ -120,6 +124,10 @@ input {
 input:checked+.card-of-mokepon {
     background: linear-gradient(rgba(12, 120, 209, 0.75), rgba(0, 0, 0, 0.75)), url(../assets/imgs/74c81634df9087d04879088aa5c2ee50.gif);
     background-position: center;
+}
+
+input:checked+.card-of-mokepon p{
+    color: #dfe220f3;
 }
 
 .card-of-mokepon img {
@@ -137,7 +145,7 @@ input:checked+.card-of-mokepon {
     width: 1.5em;
     letter-spacing: 50px;
     word-break: break-all;
-    color: #dfe220f3;
+    color: #f5000085;
 }
 
 #button-pets {
@@ -417,7 +425,7 @@ input:checked+.card-of-mokepon {
 @media only screen and (min-device-width:280px) and (max-device-width : 759px) {
 
     body {
-        background: linear-gradient(rgba(5, 7, 12, 0.55), rgba(5, 7, 12, 0.55)), url(../assets/imgs/fondomobilmoke.jpg);
+        background: linear-gradient(rgba(5, 7, 12, 0.35), rgba(5, 7, 12, 0.15)), url(../assets/imgs/fondomobilmoke.jpg);
         background-position: center;
         background-size: cover;
         background-attachment: fixed;
