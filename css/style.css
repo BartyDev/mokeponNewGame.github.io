@@ -1,0 +1,507 @@
+/* ===== CSS FORMAT ====== */
+
+* {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    ::-webkit-scrollbar{
+        display: none;
+    }
+}
+
+@font-face {
+    font-family: "pokeFont";
+    src: url(../assets/fonts/PocketMonk.otf);
+}
+
+@font-face {
+    font-family: "pokeArmy";
+    src: url(../assets/fonts/RetroGaming.ttf);
+}
+
+/* ===LOADER PAGE=== */
+
+.loader {
+    background: linear-gradient(rgba(5, 7, 12, 0.75), rgba(5, 7, 12, 0.75)), url(../assets/imgs/mokepowallp.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: right;
+    background-attachment: fixed;
+    font-size: 10px;
+    color: #fff;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 99999;
+    position: fixed;
+    top: 0;
+    left: 0;
+    clip-path: circle(150% at 100% 0);
+    transition: clip-path 0.8s ease-in-out;
+}
+
+.loader2 {
+    clip-path: circle(0% at 100% 100%);
+}
+
+/* ===== CSS PAGE ====== */
+
+body {
+    background: linear-gradient(rgba(5, 7, 12, 0.3), rgba(5, 7, 12, 0.0)), url(../assets/imgs/fondobatallapokemon.png);
+    background-color: #002B5B;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    font-family: "pokeFont";
+}
+
+#select-pet {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.title {
+    color: #dfe220f3;
+    text-shadow: -7px 8px 3px #0a0dd1e5;
+    font-size: 7rem;
+    margin-top: 20px;
+    margin-bottom: 0;
+    text-align: center;
+}
+
+.logo img{
+    width: 100px;
+}
+
+.sub-title {
+    color: #ffffffef;
+    text-shadow: -3px 3px 2px #e22020b7;
+    font-size: 20px;
+    padding: 11px;
+    border-radius: 15px;
+    font-family: "pokeArmy";
+}
+
+.cards {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.card-of-mokepon {
+    width: 190px;
+    height: 190px;
+    padding: 10px;
+    box-sizing: border-box;
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-right: 150px;
+    margin-left: 150px;
+    background: linear-gradient(rgba(5, 7, 12, 0.75), rgba(5, 7, 12, 0.0));
+    background-position: center;
+    color: #ffffffef;
+    cursor: pointer;
+}
+
+.card-of-mokepon:hover {
+    background: linear-gradient(rgba(5, 7, 12, 0.65), rgba(5, 7, 12, 0.35));
+    background-position: center;
+}
+
+input {
+    display: none;
+}
+
+input:checked+.card-of-mokepon {
+    background: linear-gradient(rgba(12, 120, 209, 0.75), rgba(0, 0, 0, 0.75)), url(../assets/imgs/74c81634df9087d04879088aa5c2ee50.gif);
+    background-position: center;
+}
+
+.card-of-mokepon img {
+    width: 100px;
+    transition: all 0.5s;
+}
+
+.card-of-mokepon img:hover {
+    transform: scale(1.1, 1.1);
+}
+
+.card-of-mokepon p {
+    font-size: 15px;
+    font-weight: bold;
+    width: 1.5em;
+    letter-spacing: 50px;
+    word-break: break-all;
+    color: #dfe220f3;
+}
+
+#button-pets {
+    margin: 25px;
+    padding: 10px 35px;
+    border-radius: 20px;
+    font-size: 20px;
+    border: 2px solid #0a0dd1e5;
+    background: linear-gradient(rgba(12, 120, 209, 0.75), rgba(0, 0, 0, 0.75));
+    color: #ffffff;
+    text-shadow: -1px 2px 3px #e22020b7;
+    font-family: "pokeArmy";
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+#button-pets:hover {
+    background: none;
+    background-color: #dfe220f3;
+    color: #0a0dd1e5;
+    text-shadow: none;
+}
+
+/*=== COMBATE ===*/
+
+#select-atk {
+    flex-direction: column;
+    align-items: center;
+}
+
+.title-combat {
+    color: #dfe220f3;
+    text-shadow: -7px 8px 3px #0a0dd1e5;
+    font-size: 5rem;
+    margin-top: 10px;
+    margin-bottom: 0;
+    text-align: center;
+}
+
+.logo2 img{
+    width: 80px;
+}
+
+.subtitle-combat {
+    color: #ffffffef;
+    text-shadow: -3px 3px 2px #e22020b7;
+    font-size: 2em;
+    padding: 0px 11px;
+    border-radius: 15px;
+    margin: 1rem 1rem;
+    font-family: "pokeArmy";
+}
+
+.attack-grid {
+    display: grid;
+    grid-template-columns: 220px 220px;
+    height: 200px;
+    border-radius: 16px;
+    font-family: "pokeArmy";
+    font-size: 11px;
+    margin-bottom: 30px;
+    border: 1px solid #fff;
+    color: #fff;
+    text-align: center;
+    overflow: auto;
+    background: linear-gradient(rgba(5, 7, 12, 0.65), rgba(5, 7, 12, 0.65));
+}
+
+.attack-grid .div1 {
+    border: 1px solid #fff;
+    border-top: none;
+    border-left: none;
+    border-bottom: none;
+}
+
+.mokepon-name {
+    font-size: 15px;
+    margin-bottom: 5px;
+}
+
+#message {
+    width: 200px;
+    height: 120px;
+    padding: 10px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    flex-direction: column;
+    background: linear-gradient(rgba(12, 120, 209, 0.75), rgba(0, 0, 0, 0.75));
+    color: #fff;
+    font-family: "pokeArmy";
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 350px 400px 350px;
+    justify-items: center;
+    align-items: center;
+}
+
+.players {
+    display: flex;
+    flex-direction: column;
+    color: #fff;
+    font-family: "pokeArmy";
+}
+
+.players img {
+    width: 150px;
+}
+
+#button-restart {
+    padding: 5px 20px;
+    border-radius: 20px;
+    border: 2px solid #0a0dd1e5;
+    font-size: 15px;
+    background: linear-gradient(rgba(12, 120, 209, 0.75), rgba(0, 0, 0, 0.75));
+    color: #ffffff;
+    font-family: "pokeArmy";
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#button-restart:hover {
+    background: none;
+    background-color: #dfe220f3;
+    color: #0a0dd1e5;
+    transform: scale(1.1);
+}
+
+.box-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    margin-bottom: 20px;
+}
+
+#button-fire {
+    background-color: #e00000ec;
+}
+
+#button-water {
+    background-color: #0029ddec;
+}
+
+#button-earth {
+    background-color: #00db37ec;
+}
+
+#button-wind {
+    background-color: #00a1e0ec;
+}
+
+#button-thunder {
+    background-color: #dde000ec;
+}
+
+.buttons-atks {
+    display: flex;
+    padding: 4px;
+    font-size: 15px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    color: #ffffff;
+    font-family: "pokeArmy";
+    transition: .3s;
+}
+
+.buttons-atks span {
+    background: #111111ec;
+    padding: 10px 18px;
+    border-radius: 6px;
+    transition: .3s;
+}
+
+.buttons-atks:hover span {
+    background: none;
+}
+
+.buttons-atks:hover {
+    transform: scale(0.9);
+}
+
+/* ====MEDIA QUERYS PAGE ONE==== */
+
+@media only screen and (min-device-width:280px) and (max-device-width : 411px) {
+
+    .title {
+        font-size: 4rem;
+        margin-top: 10px;
+    }
+
+    .logo img{
+        width: 60px;
+    }
+
+    .logo2 img{
+        width: 50px;
+    }
+
+    .card-of-mokepon {
+        width: 150px;
+        height: 150px;
+        padding: 5px;
+    }
+
+    .card-of-mokepon img {
+        width: 80px;
+    }
+
+    .card-of-mokepon p {
+        font-size: 12px;
+        width: 1em;
+    }
+
+    #button-pets {
+        margin: 15px;
+        padding: 8px 30px;
+        font-size: 15px;
+    }
+}
+
+
+@media only screen and (min-device-width:412px) and (max-device-width : 510px) {
+
+    .title {
+        font-size: 4rem;
+        margin-top: 10px;
+    }
+
+    .logo img{
+        width: 60px;
+    }
+
+    .sub-title {
+        font-size: 1em;
+        margin-top: 2rem;
+        margin-bottom: 1rem;
+    }
+
+    #button-pets {
+        margin: 15px;
+        padding: 8px 30px;
+        font-size: 15px;
+    }
+}
+
+/* ====MEDIA QUERYS PAGE TWO==== */
+
+@media only screen and (min-device-width:760px) and (max-device-width : 1116px) {
+
+    .card-of-mokepon {
+        margin-right: 0px;
+        margin-left: 0px;
+    }
+
+    .container {
+        grid-template-columns: 240px 220px 240px;
+    }
+
+    .players img {
+        width: 120px;
+    }
+
+    .box-buttons {
+        gap: 40px;
+    }
+
+    .buttons-atks {
+        font-size: 10px;
+    }
+}
+
+@media only screen and (min-device-width:280px) and (max-device-width : 759px) {
+
+    body {
+        background: linear-gradient(rgba(5, 7, 12, 0.55), rgba(5, 7, 12, 0.55)), url(../assets/imgs/fondomobilmoke.jpg);
+        background-position: center;
+        background-size: cover;
+        background-attachment: fixed;
+    }
+
+    .sub-title {
+        font-size: 1em;
+        margin-top: 0px;
+        margin-bottom: 0px;
+    }
+
+    .card-of-mokepon {
+        margin-right: 0px;
+        margin-left: 0px;
+    }
+
+    .container {
+        grid-template-columns: 250px;
+        grid-template-rows: 130px 130px 130px;
+    }
+
+    #message {
+        width: 150px;
+        height: 100px;
+        padding: 10px;
+        font-size: 12px;
+    }
+
+    .subtitle-combat {
+        margin-bottom: 10px;
+    }
+
+    .attack-grid {
+        background: linear-gradient(rgba(12, 120, 209, 0.75), rgba(0, 0, 0, 0.75));
+        height: 180px;
+    }
+
+    .players img {
+        width: 100px;
+    }
+
+    .box-buttons {
+        gap: 20px;
+        flex-wrap: wrap;
+    }
+
+    .buttons-atks {
+        font-size: 10px;
+    }
+}
+
+@media only screen and (min-device-width:280px) and (max-device-width : 459px) {
+
+    .title-combat {
+        text-shadow: -5px 6px 3px #0a0dd1e5;
+        font-size: 3rem;
+    }
+
+    .logo2 img{
+        width: 50px;
+    }
+
+    .subtitle-combat {
+        text-shadow: -1px 2px 2px #e22020b7;
+        font-size: 1.2rem;
+        padding: 8px;
+        margin: 1rem 1rem;
+    }
+
+    .attack-grid {
+        grid-template-columns: 160px 160px;
+        font-size: 9px;
+        margin-bottom: 10px;
+    }
+
+    .mokepon-name {
+        font-size: 12px;
+    }
+}
+
+@media only screen and (min-device-width:280px) and (max-device-width : 334px) {
+    .attack-grid {
+        grid-template-columns: 130px 130px;
+        font-size: 9px;
+        margin-bottom: 10px;
+    }
+}
