@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MOKEPON!</title>
     <link rel="icon" type="image/x-icon" href="./assets/imgs/pokeico.png" />
-    <script src="./js/mokepon.js"></script>
     <link rel="stylesheet" href="./css/style.css">
 </head>
 
@@ -15,62 +14,26 @@
     <!-- Loader -->
     <div id="loader" class="loader">
         <img src="./assets/imgs/mokeponload.gif" alt="Pikachu">
-            <p>Loading . . .</p>
+        <p>Loading . . .</p>
     </div>
 
     <!-- first page -->
     <section id="select-pet">
-            <h1 class="title">MOKEP<span class="logo"><img src="./assets/imgs/pokebal.gif" alt="Pokebola" loading="lazy"></span>N</h1> 
+        <h1 class="title">MOKEP<span class="logo"><img src="./assets/imgs/pokebal.gif" alt="Pokebola"
+                    loading="lazy"></span>N</h1>
         <h2 class="sub-title">Choose your Mokepon</h2>
-        <div class="cards" name="card">
-            <!-- mokepons -->
-            <input type="radio" class="rolex" name="pets" id="Flameon">
-            <label class="card-of-mokepon" for="Flameon" id="labell">
-                <p>フラメオン</p>
-                <img src="./assets/imgs/flameon.gif" alt="Flameon" title="Flameon" loading="lazy">
-            </label>
-            <input type="radio" class="rolex" name="pets" id="Kaimander">
-            <label class="card-of-mokepon" for="Kaimander">
-                <p>カイマンダー</p>
-                <img src="./assets/imgs/kaimander.gif" id="lol" alt="Kaimander" title="Kaimander" loading="lazy">
-            </label>
-            <input type="radio" name="pets" id="Ratuen">
-            <label class="card-of-mokepon" for="Ratuen">
-                <p>ラトエン</p>
-                <img src="./assets/imgs/ratuen.gif" alt="Ratuen" title="Ratuen" loading="lazy">
-            </label>
-            <input type="radio" name="pets" id="Condorking">
-            <label class="card-of-mokepon" for="Condorking">
-                <p>コンドルキング</p>
-                <img src="./assets/imgs/condorking2.gif" alt="Condorking" title="Condorking" loading="lazy">
-            </label>
-            <input type="radio" class="rolex" name="pets" id="Tormen">
-            <label class="card-of-mokepon" for="Tormen">
-                <p>トーメン</p>
-                <img src="./assets/imgs/tormen2.gif" alt="Tormen" title="Tormen" loading="lazy">
-            </label>
-            <input type="radio" name="pets" id="Rhinordon">
-            <label class="card-of-mokepon" for="Rhinordon">
-                <p>リノードン</p>
-                <img src="./assets/imgs/rhinordon.gif" alt="Rhinordon" title="Rhinordon" loading="lazy">
-            </label>
-            <input type="radio" name="pets" id="Sylphy">
-            <label class="card-of-mokepon" for="Sylphy">
-                <p>シルフィ</p>
-                <img src="./assets/imgs/sylphy.gif" alt="Sylphy" title="Sylphy" loading="lazy">
-            </label>
-            <input type="radio" name="pets" id="Minor">
-            <label class="card-of-mokepon" for="Minor">
-                <p>マイナー</p>
-                <img src="./assets/imgs/minor.gif" alt="Minor" title="Minor" loading="lazy">
-            </label>
+        <div id="card-box" class="cards" name="card">
+
+            <!-- print mokepons -->
+
         </div>
         <button id="button-pets">Select</button>
     </section>
 
     <!-- second page -->
     <section id="select-atk" hidden>
-        <h5 class="title-combat">MOKEP<span class="logo2"><img src="./assets/imgs/pokebal.gif" alt="Pokebola" loading="lazy"></span>N</h5>
+        <h5 class="title-combat">MOKEP<span class="logo2"><img src="./assets/imgs/pokebal.gif" alt="Pokebola"
+                    loading="lazy"></span>N</h5>
         <h6 class="subtitle-combat">attack with</h6>
         <div class="attack-grid">
             <div class="div1">
@@ -103,14 +66,11 @@
             </div>
         </section>
         <h2 class="subtitle-combat">Choose the attack</h2>
-        <div class="box-buttons" class="buttons-atks">
-            <button id="button-fire" class="buttons-atks"> <span>🔥 Fire 🔥</span></button>
-            <button id="button-water" class="buttons-atks"> <span>💧 Water 💧</span></button>
-            <button id="button-earth" class="buttons-atks"> <span>🌱 Earth 🌱</span></button>
-            <button id="button-wind" class="buttons-atks"> <span>☁️ Wind ☁️</span></button>
-            <button id="button-thunder" class="buttons-atks"> <span>⚡ Thunder ⚡</span></button>
+        <div class="box-buttons" class="buttons-atks" id="box-button">
+            <!-- print buttons attacks -->
         </div>
     </section>
+    <script src="./js/mokepon.js"></script>
 </body>
 
 </html>

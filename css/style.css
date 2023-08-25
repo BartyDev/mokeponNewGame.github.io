@@ -2,7 +2,8 @@
 
 * {
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-    ::-webkit-scrollbar{
+
+    ::-webkit-scrollbar {
         display: none;
     }
 }
@@ -75,7 +76,7 @@ body {
     text-align: center;
 }
 
-.logo img{
+.logo img {
     width: 100px;
 }
 
@@ -104,16 +105,15 @@ body {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    margin-right: 150px;
-    margin-left: 150px;
-    background: linear-gradient(rgba(6, 11, 48, 0.75), rgba(5, 7, 12, 0.40));
+    margin: 5em;
+    background: linear-gradient(rgba(12, 120, 209, 0.75), rgba(0, 0, 0, 0.1));
     background-position: center;
     color: #ffffffef;
     cursor: pointer;
 }
 
 .card-of-mokepon:hover {
-    background: linear-gradient(rgba(6, 11, 48, 0.95), rgba(5, 7, 12, 0.75));
+    background: linear-gradient(rgba(12, 120, 209, 0.95), rgba(5, 7, 12, 0.5));
     background-position: center;
 }
 
@@ -122,11 +122,11 @@ input {
 }
 
 input:checked+.card-of-mokepon {
-    background: linear-gradient(rgba(12, 120, 209, 0.75), rgba(0, 0, 0, 0.75)), url(../assets/imgs/74c81634df9087d04879088aa5c2ee50.gif);
+    background: linear-gradient(rgba(196, 7, 7, 0.75), rgba(0, 0, 0, 0.5)), url(../assets/imgs/74c81634df9087d04879088aa5c2ee50.gif);
     background-position: center;
 }
 
-input:checked+.card-of-mokepon p{
+input:checked+.card-of-mokepon p {
     color: #dfe220f3;
 }
 
@@ -145,7 +145,7 @@ input:checked+.card-of-mokepon p{
     width: 1.5em;
     letter-spacing: 50px;
     word-break: break-all;
-    color: #f5000085;
+    color: #ffffff85;
 }
 
 #button-pets {
@@ -185,7 +185,7 @@ input:checked+.card-of-mokepon p{
     text-align: center;
 }
 
-.logo2 img{
+.logo2 img {
     width: 80px;
 }
 
@@ -195,7 +195,7 @@ input:checked+.card-of-mokepon p{
     font-size: 2em;
     padding: 0px 11px;
     border-radius: 15px;
-    margin: 1rem 1rem;
+    margin: 2rem 1rem;
     font-family: "pokeArmy";
 }
 
@@ -293,16 +293,16 @@ input:checked+.card-of-mokepon p{
     background-color: #0029ddec;
 }
 
-#button-earth {
+#button-plant {
     background-color: #00db37ec;
 }
 
-#button-wind {
-    background-color: #00a1e0ec;
+#button-psychic {
+    background-color: #4300e0ec;
 }
 
-#button-thunder {
-    background-color: #dde000ec;
+#button-poison {
+    background-color: #8e00e0ec;
 }
 
 .buttons-atks {
@@ -341,11 +341,11 @@ input:checked+.card-of-mokepon p{
         margin-top: 10px;
     }
 
-    .logo img{
+    .logo img {
         width: 60px;
     }
 
-    .logo2 img{
+    .logo2 img {
         width: 50px;
     }
 
@@ -379,7 +379,7 @@ input:checked+.card-of-mokepon p{
         margin-top: 10px;
     }
 
-    .logo img{
+    .logo img {
         width: 60px;
     }
 
@@ -401,8 +401,7 @@ input:checked+.card-of-mokepon p{
 @media only screen and (min-device-width:760px) and (max-device-width : 1116px) {
 
     .card-of-mokepon {
-        margin-right: 0px;
-        margin-left: 0px;
+        margin: 2em;
     }
 
     .container {
@@ -414,6 +413,7 @@ input:checked+.card-of-mokepon p{
     }
 
     .box-buttons {
+        margin-top: 1em;
         gap: 40px;
     }
 
@@ -425,7 +425,7 @@ input:checked+.card-of-mokepon p{
 @media only screen and (min-device-width:280px) and (max-device-width : 759px) {
 
     body {
-        background: linear-gradient(rgba(5, 7, 12, 0.35), rgba(5, 7, 12, 0.15)), url(../assets/imgs/fondomobilmoke.jpg);
+        background: linear-gradient(rgba(5, 7, 12, 0.35), rgba(5, 7, 12, 0.45)), url(../assets/imgs/fondomobilmoke.jpg);
         background-position: center;
         background-size: cover;
         background-attachment: fixed;
@@ -434,12 +434,11 @@ input:checked+.card-of-mokepon p{
     .sub-title {
         font-size: 1em;
         margin-top: 0px;
-        margin-bottom: 0px;
+        margin-bottom: 1em;
     }
 
     .card-of-mokepon {
-        margin-right: 0px;
-        margin-left: 0px;
+        margin: 1.5em;
     }
 
     .container {
@@ -484,7 +483,7 @@ input:checked+.card-of-mokepon p{
         font-size: 3rem;
     }
 
-    .logo2 img{
+    .logo2 img {
         width: 50px;
     }
 
