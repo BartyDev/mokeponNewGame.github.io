@@ -3,24 +3,19 @@ const sectionRestart = document.getElementById("restart")
 const buttonPetSelect = document.getElementById("button-pets");
 const buttonRestart = document.getElementById("button-restart");
 
-
 const chooseYourPet = document.getElementById("select-pet")
 const mokeponPlayerName = document.getElementById("mokepon-change")
 const mokeponPlayerImg = document.getElementById("mokepon-change-img")
 
-
 const mokeponEnemyPlayer = document.getElementById("mokepon-change-enemy")
 const mokeponPlayerImg2 = document.getElementById("mokepon-change-img2")
-
 
 const sectionMessage = document.getElementById("resultBox");
 const sectionAtkPlayer = document.getElementById("atkplayerOneBox");
 const sectionAtkEnemy = document.getElementById("atkplayerTwoBox");
 
-
 const spanLIfePlayer = document.getElementById("life-player")
 const spanLIfeEnemy = document.getElementById("life-enemy")
-
 
 const toogleDead1 = document.getElementById("img-dead1")
 const toogleDead2 = document.getElementById("img-dead2")
@@ -28,7 +23,6 @@ const toogleDead2 = document.getElementById("img-dead2")
 const contentBox = document.getElementById("card-box")
 
 const contentBoxButtons = document.getElementById("box-button")
-
 
 let mokepons = [];
 let playerAttack = [];
@@ -50,6 +44,9 @@ let buttonsChoice = []
 let enemyAttackVar
 let playerAttackVar
 
+let buttonSilence;
+let music;
+
 let lifeEnemy = 3;
 let lifePlayer = 3;
 
@@ -68,7 +65,7 @@ let loadPage = new Audio("assets/audio/comenzamos.mp3")
 let yesWinner = new Audio("assets/audio/yeswin.mp3")
 let yesLoser = new Audio("assets/audio/golpeperdiste.mp3")
 let lolF = new Audio("assets/audio/empate.mp3")
-
+let silence = -1
 
 class Mokepon {
     constructor(name, subname, picture, life) {
@@ -110,9 +107,7 @@ mokepons.push(ratuen, tormen, sylphy)
 
 function playStart() {
 
-    setTimeout(() => {
-        audioWorld.play()
-    }, 5500);
+    music = audioWorld
 
     chooseYourAtk.style.display = "none"
     sectionRestart.style.display = "none"
@@ -138,6 +133,9 @@ function playStart() {
     inputRatuen.addEventListener("click", selectMokeponSound)
     inputTormen.addEventListener("click", selectMokeponSound)
     inputSylphy.addEventListener("click", selectMokeponSound)
+
+    buttonSilence = document.getElementById('silenceMode')
+    buttonSilence.addEventListener('click',silenceMode)
 
     buttonRestart.addEventListener("click", restartGame)
 }
@@ -173,9 +171,9 @@ function selectPlayerPet() {
         attackGroup(mokeponChosed)
         selectEnemyPlayerPet();
         chooseYourPet.style.display = "none"
-        audioWorld.pause()
+        music.pause()
         chooseYourAtk.style.display = "flex"
-        audioWorld2.play();
+        music = audioWorld2
     } else {
         clickButton.play();
         alert("choose your mokepon")
@@ -208,11 +206,11 @@ function buttonsAttacksPrint(buttonsAttacks) {
 
 function attacksSequence() {
     buttonsChoice.forEach((btn) => {
+
         btn.addEventListener('click', (e) => {
             if (e.target.textContent === 'flame 🔥') {
                 playerAttack.push("FIREBALL 🔥")
                 ratuenMok.play()
-                btn.style.background = "#112f58"
             } else if (e.target.textContent === 'jet 💧') {
                 playerAttack.push("WATER JET 💦")
                 tormenMok.play()
@@ -342,7 +340,7 @@ function reviewLives() {
     } else if (lifePlayer == 1) {
         spanLIfePlayer.innerHTML = "❤️🖤🖤"
     } else if (lifePlayer == 0) {
-        audioWorld2.pause();
+        music.pause();
         spanLIfePlayer.innerHTML = "🖤🖤🖤 ☠️"
         mokeponPlayerImg.style.display = "none"
         setTimeout(() => {
@@ -372,6 +370,18 @@ function restartGame() {
     ;
 }
 
+function silenceMode(){
+    silence += 1
+
+    if(silence % 2 == 0){
+        buttonSilence.classList.toggle("silence-mode-cheat")
+        music.play() 
+    }else{
+        buttonSilence.classList.remove("silence-mode-cheat")
+        music.pause()
+    }
+}
+
 function selectMokeponSound() {
     selectMokpeon.play()
 }
@@ -383,9 +393,9 @@ function aleatorio(min, max) {
 window.addEventListener("load", function () {
     setTimeout(() => {
         this.document.getElementById("loader").classList.toggle("loader2")
-
-    }, 5000)
+        playStart();
+    }, 4500);
     loadPage.play()
-    playStart();
 }
 )
+

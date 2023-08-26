@@ -60,6 +60,37 @@ body {
     font-family: "pokeFont";
 }
 
+
+.box-position{
+display: flex;
+justify-content: flex-end;
+padding: 1em;
+}
+
+.silence-mode{
+    background: url(../assets/imgs/Mute-PNG-HD-removebg-preview.png);
+    background-size: 2em;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: rgba(93, 129, 25, 0.75);
+    border: 3px solid #002B5B;
+    padding: 2em;
+    border-radius: 100%;
+    cursor: pointer;
+}
+
+.silence-mode-cheat{
+    background: url(../assets/imgs/sound-off-icon-40944-removebg-preview.png);
+    background-size: 2em;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: rgb(217, 219, 211);
+    border: 3px solid #1e0ad3fa;
+    padding: 2em;
+    border-radius: 100%;
+    cursor: pointer;
+}
+
 #select-pet {
     display: flex;
     flex-direction: column;
@@ -106,14 +137,14 @@ body {
     justify-content: space-around;
     align-items: center;
     margin: 5em;
-    background: linear-gradient(rgba(12, 120, 209, 0.75), rgba(0, 0, 0, 0.1));
+    background: linear-gradient(rgba(196, 7, 7, 0.55), rgba(0, 0, 0, 0.75));
     background-position: center;
     color: #ffffffef;
     cursor: pointer;
 }
 
 .card-of-mokepon:hover {
-    background: linear-gradient(rgba(12, 120, 209, 0.95), rgba(5, 7, 12, 0.5));
+    background: linear-gradient(rgba(196, 7, 7, 0.75), rgba(5, 7, 12, 0.75));
     background-position: center;
 }
 
@@ -122,7 +153,7 @@ input {
 }
 
 input:checked+.card-of-mokepon {
-    background: linear-gradient(rgba(196, 7, 7, 0.75), rgba(0, 0, 0, 0.5)), url(../assets/imgs/74c81634df9087d04879088aa5c2ee50.gif);
+    background: linear-gradient(rgba(12, 32, 209, 0.65), rgba(0, 0, 0, 0.95)), url(../assets/imgs/74c81634df9087d04879088aa5c2ee50.gif);
     background-position: center;
 }
 
@@ -236,7 +267,7 @@ input:checked+.card-of-mokepon p {
     text-align: center;
     justify-content: center;
     flex-direction: column;
-    background: linear-gradient(rgba(12, 120, 209, 0.75), rgba(0, 0, 0, 0.75));
+    background: linear-gradient(rgba(209, 12, 12, 0.75), rgba(0, 0, 0, 0.75));
     color: #fff;
     font-family: "pokeArmy";
 }
@@ -431,6 +462,16 @@ input:checked+.card-of-mokepon p {
         background-attachment: fixed;
     }
 
+    .silence-mode{
+        background-size: 1.5em;
+        padding: 1.2em;
+    }
+
+    .silence-mode-cheat{
+        background-size: 1.5em;
+        padding: 1.2em;
+    }
+
     .sub-title {
         font-size: 1em;
         margin-top: 0px;
@@ -458,7 +499,7 @@ input:checked+.card-of-mokepon p {
     }
 
     .attack-grid {
-        background: linear-gradient(rgba(12, 120, 209, 0.75), rgba(0, 0, 0, 0.75));
+        background: linear-gradient(rgba(209, 12, 12, 0.75), rgba(0, 0, 0, 0.75));
         height: 180px;
     }
 
